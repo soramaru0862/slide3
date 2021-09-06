@@ -1,0 +1,94 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 20px;
+  color: #fff;
+}
+
+section {
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.slider {
+  height: 100%;
+  width: 100%;
+}
+
+.slide {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  transform: translateX(100%);
+}
+
+.slide.active {
+  transform: translateX(0);
+}
+
+.slide.top {
+  transition: transform 0.5s ease;
+  z-index: 3;
+}
+
+.slide::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+.slide-1 {
+  background-image: url(./img/images1.jpg);
+}
+
+.slide-2 {
+  background-image: url(./img/images2.jpg);
+}
+
+.slide-3 {
+  background-image: url(./img/images3.jpg);
+}
+
+.button {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  right: 0;
+  height: auto;
+  width: auto;
+  color: #000;
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 50px;
+}
+
+.button div {
+  cursor: pointer;
+  pointer-events: all;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.button div:hover {
+  background-color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */
